@@ -1,0 +1,19 @@
+doctype html
+html
+
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="/birdhouse">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js")
+
+  body
+    h1= "I like cats"
+    block sidebar
+    block content
