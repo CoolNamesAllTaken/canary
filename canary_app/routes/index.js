@@ -6,13 +6,19 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express', message: 'Beep boop hello'});
 });
-router.get('/stream', function(req, res, next) {
-  res.render('stream');
-})
+router.get('/birdhouse', function(req, res, next) {
+  res.render('birdhouse');
+});
+router.get('/datavis', function(req, res, next) {
+  res.render('datavis');
+});
 
-// Stream image
-setInterval(() => {
-  io.emit('image', 'some data');
-}, 1000);
+router.get('/learnmore', function(req, res, next) {
+  res.render('learnmore');
+});
+
+router.get('/about', function(req, res, next) {
+  res.render('about');
+});
 
 module.exports = router;

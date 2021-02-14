@@ -1,8 +1,18 @@
 extends layout
 
-block cheese
-  h1= title
-  p Welcome to #{title}
-
-block tiger 
-  h1= "Something else"
+block content
+  div.stream
+    script(src='/javascripts/data_stream.js')
+    img#camera-inside
+    div.infobox
+      a#username Mr. Finch's Home
+      hr#usrline.line
+      div.tempzone
+        div.tempbox
+          a Outside Temperature (ºC):
+          hr.line
+          a#temperature-outside 
+        div.tempbox
+          a Inside Temperature (ºC):
+          hr.line
+          a#temperature-inside

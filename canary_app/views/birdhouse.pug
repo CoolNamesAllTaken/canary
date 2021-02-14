@@ -1,5 +1,20 @@
 extends layout
-
+block link
+  -var selected = 'Birds near you';
 block content
-  h1= title
-  p Welcome to #{title}
+  <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.18/"></script>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  h1= "Explore local bird sightings"
+  script(src='/javascripts/birdmap.js')
+  <div>
+  <div id="viewDiv">
+  </div>
+  h2= "Birds are the first indicator." 
+  <div>
+  p Understanding local bird populations can help ecologists detect environmental changes early on. Research groups like the Cornell Lab of Orinthology track bird population health, but it can be very difficult to gather large amounts of reliable data. That's where "crowd-sourcing" (and you!) come in. 
+  p Citizen scientists can help researchers track and monitor birds, and automatic systems like Canary can gather large amounts of high-quality research data without the challenges associated with human monitoring.
+  h4="Try out the species highlight function above, using the filters in the corner of the map, and see which Canary-friendly birds live near you!"
+  </div>
+  </div>
+
