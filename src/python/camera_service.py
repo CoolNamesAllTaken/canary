@@ -13,6 +13,7 @@ def init_camera(r):
     # configure camera
     camera.resolution = (640, 480)
     camera.framerate = 32
+    camera.exposure_mode = 'auto'
 
 def capture_frame(r):
     encoded_string = ""

@@ -120,7 +120,7 @@ body {
   flex-direction: column;
 }
 
-#username {
+.username {
   font-size: 30px;
   font-style: italic;
   margin: 15px;
@@ -158,34 +158,11 @@ body {
   font-size: 20px;
 }
 
-/* ======= Resources ======= */
-.resources {
-  position: relative;
-  display: inline-block;
+.link {
+  width: 80%;
+  margin: 15px;
+  margin-top: 5px;
 }
-.linktab {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.linktab{
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #f1f1f1}
-
-.resources:hover .dropdown {
-  display: block;
-}
-
-
 
 /* 
 yellow: #FFDB00

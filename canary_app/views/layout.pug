@@ -1,12 +1,12 @@
 doctype html
 html
   block link
-    -var selected = 'Stream'; //default
+    -var selected = 'Home'; //default
   link(rel='stylesheet', href='/stylesheets/style.css')
   script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js")
 
 -var menu = { 'Home': '/', 'My Birds': '/datavis', 'Birdhouse': '/birdhouse', 'About Us': '/about', 'Get Involved':'/learnmore'};
--var resources = {'iNaturalist': 'https://www.inaturalist.org/pages/network-join', 'NestWatch': 'https://nestwatch.org/about/overview/', 'STLZoo Bird Awareness': 'https://www.stlzoo.org/conservation/doityourselfconservation/saving-birds-you-can-help'}
+
 body
   div.topnav
     img(src="/images/canary_web.png", alt="Canary_logo")#logo
@@ -17,11 +17,6 @@ body
           a.tab.selected(href=val, title=key)= key
         else
           a.tab(href=val, title=key)= key
-      div.resources
-        a.tab Resources
-        div.dropdown
-          each val, key in resources
-            a.linktab(href="#", title=key, target="_blank")
-          
+   
   block sidebar
   block content

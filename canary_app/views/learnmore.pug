@@ -1,5 +1,14 @@
 extends layout
 block link
-  -var selected = 'Get involved';
+  -var selected = 'Get Involved';
 block content
-    h1= "Get involved"
+  h1= "Consider contributing to these research efforts!"
+  -var resources = {'Join iNaturalist': 'https://www.inaturalist.org/pages/network-join', 'Join NestWatch': 'https://nestwatch.org/about/overview/', 'Check out STLZoo Bird Awareness': 'https://www.stlzoo.org/conservation/doityourselfconservation/saving-birds-you-can-help'};
+
+  div.infobox
+    a.username Helpful Links:
+    hr.line
+    each link, site in resources
+      a.tempbox.link(href=link title=site target="_blank")= site
+
+  

@@ -1,0 +1,15 @@
+[Unit]
+Description=canary-web - Starts the Canary web server.
+Documentation=https://github.com/CoolNamesAllTaken/canary
+After=network.target
+
+[Service]
+Environment=PORT=80
+Type=simple
+User=root
+WorkingDirectory=/home/pi/canary/canary_app
+ExecStart=npm start
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

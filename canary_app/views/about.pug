@@ -1,6 +1,20 @@
 extends layout
 block link
-  -var selected = 'About us';
+  -var selected = 'About Us';
 block content
-    h1= "About Canary"
-    
+    h1= "About Us"
+    <div style="align-content: center; flex-direction: row; ">
+    img(src="/images/adapt_improvise_overcome.png", alt="Canary_about")
+    h4="Contributing to research, education, and environmental awareness"
+    p Each Canary base station contains a high-definition camera with day and night vision capability (including infrared illuminators that are invisible to birds), an array of attachable sensors like thermocouples and strain gauges, and a web server that streams video and automatically gathered statistics to users on a local area network. Canary is intended to be mounted to the roof of a nesting box, birdhouse, or other observation site, and continuously captures video and other data from its feathered companions. Video and sensor data is processed on-board Canary in order to extract relevant events and summary statistics. At the micro scale, this means that users can play back amazing bird moments they may have missed, and view the history of the bird family building its life in their own yard. At the macro scale, distilling hundreds of hours of video into concise summary statistics and relevant video frames allows researchers to keep tabs on large populations of birds without consuming large amounts of bandwidth or cloud computing resources.
+    h4="Canary's open source design"
+    p Canary's hardware is built around a Raspberry Pi 4 single board computer that runs all of its data acquisition, web services, and data processing. A CSI camera module with infrared illuminators was used as the video capture device, and two waterproof thermocouples allow continuous measurement of temperature inside and outside the attached birdhouse. A PoE hat provides power to the Raspberry pi over the attached Cat5e ethernet cable, which is routed through a window with a flat cable and attached to a PoE Ethernet switch indoors. Canary is assembled into an inexpensive and compact waterproof case with the use of a 3d-printed bracket that allows the camera module to be stacked beneath the other electronics. The whole enclosure is intended to fit atop a birdhouse we built with these plans from Lowe's, which requires only a single wooden board, nails, and some glue. External electrical connections are gasketed and properly strain relieved with the use of cable glands, ensuring environmental robustness and a long service life.
+
+    p Canary's software stack is built on top of a data processing pipeline written in Python, which collects data and performs inference to capture relevant events and distill summary statistics. This pipeline writes video frames and sensor data into a REDIS key-value store, that acts as an inter-process communication layer between the Python backend and the web server, which is written in Node.js using the Express framework. While it adds some amount of overhead in inter-process communication requirements, utilizing a Python data pipeline allows the use of an unrivaled scientific computing ecosystem through packages like numpy, OpenCV, Pytorch, Tensorflow, scipy, and the like.
+
+    p The Express server pulls video frames and data from the REDIS server and uses them to populate information in web pages that it serves to the user. Streamed, high-frequency data like the video feed and temperature recordings are emitted via SocketIO websockets, allowing users to see a live feed of values and images being recorded in real time.
+
+    p Client-side webpages are coded in Node.js, with template generation using Jade/Pug and styling using CSS.
+
+    p Canary makes extensive use of the Esri API and features in order to visualize huge amounts of real bird data. Although Canary has not yet gathered any real nesting or bird sighting data, efforts such as NestWatch and iNaturalist have made some datasets available to the public. These datasets were processed and integrated, and then combined with a hosted a custom feature layer on Esri in order to create a large, interactive map of bird sightings. Additionally, Esri's capability to do SQL querying on a feature layer was utilized to enable users to highlight specific bird species, allowing them to better understand which nesting species might be present in their area. This knowledge is essential for constructing a good nesting enclosure, as many different species of birds have different requirements for a healthy nesting enclosure.
+    </div>

@@ -1,6 +1,6 @@
 extends layout
 block link
-  -var selected = 'Your birdhouse';
+  -var selected = 'My Birds';
 block content
   //- <script src="https://d3js.org/d3.v6.min.js"></script>
   //- <script src="https://d3js.org/topojson.v1.min.js"></script>
@@ -8,22 +8,23 @@ block content
 
   h1= "Monitoring your birds"
   <div>
-  <div style="display: flex; align-content: center; padding: 20px">
-  <div id="dtempchart">
-  <canvas id="tempchart" style="height:300px"></canvas>
+  <div>
+  <div id="dtempchart" style="height=300px">
+  <canvas id="tempchart" style="height=300px"></canvas>
   script(src='/javascripts/temperaturelive.js')
   </div>
-  <div style="padding-left: 40px; display: flex;flex-direction:column; align-content: center;">
-  p All Canary modules can be equipped with a variety of sensors. This live temperature graph shows the outdoor temperature and the temperature inside the birdhouse. 
-  p If you are concerned about your birds getting too cold, here are some possible solutions. 
-  p If your birdhouse does not currently have occupants, you can take many steps to keep the birdhouse warmer. First, furnish the nest with clean, dry grass or large, dry wood shavings. Put your birdhouse at a high elevation that is well protected from the wind, and consider adding an insulating material, like wood, to the walls of metal birdhouses.
+  <div>
+  p All Canary modules can be equipped with a variety of sensors. Your module uses: temperature. This live temperature graph shows the outdoor temperature and the temperature inside the birdhouse. 
+  p If you are concerned about your birds getting too cold, here are some possible solutions. If your birdhouse does not currently have occupants, you can take many steps to keep the birdhouse warmer. First, furnish the nest with clean, dry grass or large, dry wood shavings. Put your birdhouse at a high elevation that is well protected from the wind, and consider adding an insulating material, like wood, to the walls of metal birdhouses.
   p Do not move your Canary birdhouse if there is a bird living inside it! If there is a bird inside the house, you can reduce windchill without disturbing the bird by setting up a windbreak object near the house. Try to avoid loud noises.
   </div>
   </div>
   h2= "Timeline"
   p Canary uses video stream processing to track major and minor events in your birdhouse. The timeline below will track the presence of birds, the daily habits of parent birds, and chick life stage progressions.
-  <canvas id="timechart" style="height:400px"></canvas>
+  <canvas id="timechart"></canvas>
   script(src='/javascripts/timeline.js')
 
   
   </div>
+  <div id="map-container"></div>
+  <div id="timeline-container"></div>

@@ -1,0 +1,14 @@
+[Unit]
+Description=canary-python - Starts the python threads for data acquisition and processing.
+Documentation=https://github.com/CoolNamesAllTaken/canary
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/canary/src/python
+ExecStart=pipenv run python main.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

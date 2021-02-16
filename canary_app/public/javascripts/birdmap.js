@@ -117,7 +117,7 @@ require([
 
       const popupTemplate = {
         title: "{common_name} details",
-        content: "I love cats"
+        content: ""
       };
 
       // Assign styles and popup to features
